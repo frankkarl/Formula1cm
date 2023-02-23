@@ -1,0 +1,265 @@
+html {
+	height: 100vh;
+    width: 100vw;
+	font-size: 1.3rem;
+}
+
+body {
+	background-image: url("../img/back.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+    width: 100vw;
+	font-size: 1.5rem;
+	width: calc(100vw - 5.5rem);
+	padding: 1rem;
+}
+
+@media screen and (min-width:9px) {
+	body {
+		font-size: 1rem
+	}
+}
+
+h1 {
+	margin: 0;
+	padding: 3rem 0 0 0;
+	height: 0px;
+    overflow: hidden;
+    background-image: url("../img/title.svg");
+    background-repeat: no-repeat;
+}
+
+button {
+    background: white;
+    border: 1px solid;
+}
+
+#mainform {
+	width: fit-content;
+    margin: 0 auto;
+}
+
+fieldset {
+	display: flex;
+	justify-content: space-between;
+    align-items: center;
+	flex-wrap: wrap;
+}
+
+fieldset.hidden {
+	border: none;
+}
+
+fieldset > *:not(legend) {
+	min-width: 13rem;
+	text-align: center;
+	margin: 1rem;
+}
+
+fieldset > *:not(legend)+*:not(legend) {
+	margin-left: 2rem;
+}
+
+fieldset > legend {
+	padding: 0 0.5rem;
+}
+
+.cent,
+.minutes,
+.seconds {
+	position: relative;
+}
+
+.cent::after {
+	content: "mm";
+	position: absolute;
+    top: 0.65rem;
+    right: 0.9rem;
+    transition: all .05s ease-in-out;
+}
+
+.minutes::after {
+	content: "'";
+	position: absolute;
+    top: 0.65rem;
+    right: 1rem;
+    transition: all .05s ease-in-out;
+}
+
+.seconds::after {
+	content: '"';
+	position: absolute;
+    top: 0.65rem;
+    right: 1rem;
+    transition: all .05s ease-in-out;
+}
+
+.minutes input[type="text"],
+.minutes input[type="number"],
+.seconds input[type="text"],
+.seconds input[type="number"],
+.hseconds input[type="text"],
+.hseconds input[type="number"]
+{
+	padding-right: 1rem;
+}
+
+.cent input[type="text"],
+.cent input[type="number"]
+{
+	padding-right: 3rem;
+}
+
+@media screen and (min-width:9px) {
+	.cent input[type="text"],
+	.cent input[type="number"]
+	{
+		padding-right: 2rem;
+	}
+}
+
+input {
+	width: 13rem;
+    text-align: right;
+	margin: 0.5rem;
+}
+
+input[type="range"] {
+	width: 15rem;
+}
+
+input[type="number"] {
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+}
+
+input[type="radio"].radio {
+	visibility: hidden;
+	width: 2rem;
+	height: 2rem;
+}
+
+input[type="radio"].radio::before {
+	content: "";
+	display: inline-block;
+	width: 2rem;
+	height: 2rem;
+	visibility: visible;
+	background-repeat: no-repeat;
+	background-size: contain;
+	opacity: 50%;
+}
+
+input[type="radio"].radio:first-of-type::before {
+	content: "";
+	display: inline-block;
+	width: 2rem;
+	height: 2rem;
+	visibility: visible;
+	background-image: url("../img/goal.svg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	opacity: 50%;
+}
+
+input[type="radio"].radio:checked::before,
+input[type="radio"].radio.checked::before {
+	opacity: 100%;
+}
+
+input[type="radio"].radio:not(:first-of-type):checked::after,
+input[type="radio"].radio:not(:first-of-type).checked::after {
+	content: "";
+	display: inline-block;
+    position: relative;
+    top: -2.7rem;
+    left: -0.5rem;
+	width: 1rem;
+	height: 1rem;
+    visibility: visible;
+	margin: 1rem;
+	background: linear-gradient(45deg, rgba(0,0,255,0) 0%,rgba(0,0,0,0) 43%,#ff0000 45%,#ff0000 55%,rgba(0,0,0,0) 57%,rgba(0,0,0,0) 100%), linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 43%,#ff0000 45%,#ff0000 55%,rgba(0,0,0,0) 57%,rgba(0,0,0,0) 100%);
+}
+
+input[type="radio"].engines::before {
+	background-image: url("../img/engine.svg");
+}
+
+input[type="radio"].tires::before {
+	background-image: url("../img/tyre.svg");
+}
+
+input[type="radio"].flags::before {
+	background-image: url("../img/flag.svg");
+}
+
+/*
+Style for the modal dialog that replaces the alert field
+*/
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100010;
+}
+
+.ui-front { 
+  z-index: 100011 !important;
+}
+
+.modal__container {
+  background: #fff;
+  padding: 30px;
+  max-height: 80%;
+  border-radius: 4px;
+  box-sizing: border-box;
+  line-height: 27px;
+  margin:15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.micromodal-slide {
+  display: none;
+}
+
+.micromodal-slide.is-open {
+  display: block;
+}
+
+.modal__container main {
+	padding-bottom: 10px;
+    overflow-y: auto;
+}
+
+.modal__container footer {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.modal__container button {
+  margin-left: 5px;
+}
+
+.popupcontent {
+  position: relative;
+  display:none;
+}
+
+@media screen and (min-width:975px) {
+    .mobilewrap {
+      display:flex;
+    }
+}
+
+.modal__container .popupcontent {
+  display:block;
+}
