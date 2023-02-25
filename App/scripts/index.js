@@ -136,7 +136,7 @@ $( document ).ready(function() {
 		$(element).on("input",(event)=>{if(event.target.value>maximum){event.target.value=maximum;event.target.dispatchEvent(new Event("input"))}});
 	});		
 	
-	const abouttext="9e/;P`lofkd\x1DEbimbo\x1D>mm\x1Dclo\x1Dqeb\x1DClojri^.`j\\\x1D?l^oad^jb9,e/;D^jb\x1D^ka\x1Ddo^mef`\x1Dabpfdk\x1D_v\x1DA^sfab\x1DDebicf9_o;Fjmibjbkq^qflk\x1Dlc\x1Dqeb\x1D^mm\x1D_v\x1DH^oi\x1DCo^kh";
+	const abouttext='9e/;P`lofkd\x1DEbimbo\x1D>mm\x1Dclo\x1Dqeb\x1DClojri^.`j\\\x1D?l^oad^jb9,e/;D^jb\x1D^ka\x1Ddo^mef`\x1Dabpfdk\x1D_v\x1DA^sfab\x1DDebicf\x1DX9^\x1Deobc:\x1Feqqmp7,,ttt+hf`hpq^oqbo+`lj,molgb`qp,a^ar,clojri^.`j*te^q*vlr*pbb*fp*te^q*vlr*o^`b,\x1F\x1Dq^odbq:\x1F\\_i^kh\x1F;jlob9,^;Z9_o;Fjmibjbkq^qflk\x1Dlc\x1Dqeb\x1D^mm\x1D_v\x1DH^oi\x1DCo^kh\x1DX9^\x1Deobc:\x1Feqqmp7,,dfqer_+`lj,co^khh^oi,Clojri^.`j\x1F\x1Dq^odbq:\x1F\\_i^kh\x1F;jlob9,^;Z';
 	
 	$("#about").on("click",()=>alertplus(cc(abouttext,3),{html:true}));
 });
